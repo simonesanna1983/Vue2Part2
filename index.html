@@ -12,14 +12,21 @@
     <title>Vite App</title>
   </head>
   <body>
-    
+
     <div id="app">{{ message }}
+
+    <loading v-bind:show="isLoading"></loading>
 
       <ul>
         <li v-for="todo in todos" :key="todo.id">
-          {{ todo.title }}
+          {{ todo.title }} <span style="cursor: pointer;" v-on:click="deleteTodo(todo.id)">❌</span>
         </li>
       </ul>
+      <span v-if="todos.length === 0">No todo to show</span>
+
+      <carousel v-if="photos.length > 0" v-bind:photos="photos" v-bind:carouselid="'photoPlaceHolder'"></carousel>
+      <br/>
+      <carousel v-if="cats.length > 0" v-bind:photos="cats" v-bind:carouselid="'catsPlaceHolder'"></carousel>
 
   </div>    
 
@@ -29,6 +36,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="module" src="/components//loading.js"></script>
+    <script type="module" src="/components//carousel.js"></script>
     <script type="module" src="/app.js"></script>
   </body>
 </html>
