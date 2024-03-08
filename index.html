@@ -12,14 +12,17 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
-
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        {{ todo.title }}
-      </li>
-    </ul>
     
+    <div id="app">{{ message }}
+
+      <ul>
+        <li v-for="todo in todos" :key="todo.id">
+          {{ todo.title }}
+        </li>
+      </ul>
+
+  </div>    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
